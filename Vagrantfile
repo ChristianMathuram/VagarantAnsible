@@ -23,6 +23,7 @@ config.vm.provider "vmware_desktop"
 testa.vm.box = "hashicorp/bionic64"
 testa.vm.hostname = "TestA.test"
 testa.vm.network :private_network, ip: "192.168.60.4"
+testa.vm.provision "Installing Ansible in TestA", type: "shell", preserve_order: true, inline: "sudo apt install -y ansible"
 end
 
 # TestB
@@ -31,6 +32,7 @@ config.vm.provider "vmware_desktop"
 testb.vm.box = "hashicorp/bionic64"
 testb.vm.hostname = "TestB.test"
 testb.vm.network :private_network, ip: "192.168.60.5"
+testb.vm.provision "Updating VM TestC", type: "shell", preserve_order: true, inline: "sudo apt update"
 end
 
 # TestC
@@ -39,6 +41,8 @@ config.vm.provider "vmware_desktop"
 testc.vm.box = "hashicorp/bionic64"
 testc.vm.hostname = "TestC.test"
 testc.vm.network :private_network, ip: "192.168.60.6"
+testc.vm.provision "Installing Tree in TestC", type: "shell", preserve_order: true, inline: "sudo apt install tree"
+testc.vm.provision "Updating VM TestC", type: "shell", preserve_order: true, inline: "sudo apt update"
 end
 
 end
