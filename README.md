@@ -24,3 +24,13 @@ Note:
 Memory is set to 1 GB and network is enabled
 Runs only on VMWare Desktop
 VM will be added to VMWare Workstation list
+
+## Updating VM when created
+
+`testb.vm.provision "Updating VM TestC", type: "shell", preserve_order: true, inline: "sudo apt update"`
+
+## Install apps when VM is created
+
+`testa.vm.provision "Installing Ansible in TestA", type: "shell", preserve_order: true, inline: "sudo apt install -y ansible"`
+
+Note: use -y flag to acknowledge 
