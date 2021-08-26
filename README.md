@@ -50,3 +50,9 @@ VM will be added to VMWare Workstation list
 `testa.vm.provision "Installing Ansible in TestA", type: "shell", preserve_order: true, inline: "sudo apt install -y ansible"`
 
 Note: use -y flag to acknowledge 
+
+---
+
+# Changes Made
+1. Switched from vmware to virtual box
+2. Set a common provider 
