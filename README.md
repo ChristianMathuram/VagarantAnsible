@@ -28,15 +28,15 @@ Memory is set to 1 GB and network is enabled
 Runs only on VMWare Desktop
 VM will be added to VMWare Workstation list
 
-## UPDATE WHEN VM IS CREATED
+## Vagrant Provision
+1. Update when VM is created
+  * `testb.vm.provision "Updating VM TestC", type: "shell", preserve_order: true, inline: "sudo apt update"`
+2. Install application when vm is created
+  * `testa.vm.provision "Installing Ansible in TestA", type: "shell", preserve_order: true, inline: "sudo apt install -y ansible"`
 
-`testb.vm.provision "Updating VM TestC", type: "shell", preserve_order: true, inline: "sudo apt update"`
-
-## INSTALL APPLICATION WHEN VM IS CREATED
-
-`testa.vm.provision "Installing Ansible in TestA", type: "shell", preserve_order: true, inline: "sudo apt install -y ansible"`
-
-Note: use -y flag to acknowledge 
+Note:
+Add these lines inside your vagarnt file
+use -y flag to acknowledge 
 
 ---
 
