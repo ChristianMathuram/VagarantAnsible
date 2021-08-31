@@ -19,7 +19,7 @@
 
 ## VM WITH MINIMUM REQUIREMENTS
 
-Check vagrantMini file to run a VM with minimum requirements in vagrant
+Check vagrantMini.txt file to run a VM with minimum requirements in vagrant
 1. Copy everything in vagrantMini and past it into Vagrant file
 2. `vagrant up` in your currrent directory terminal to start the VM
 
