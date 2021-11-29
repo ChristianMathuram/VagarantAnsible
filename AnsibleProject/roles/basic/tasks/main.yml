@@ -1,0 +1,39 @@
+- name: Update all packages for systems in Chris network
+  apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+    force_apt_get: yes
+
+# Install apps 
+# Uninstall: change state to absent
+- name: Installing Application Netdiscover
+  apt:
+    name: netdiscover
+    state: present
+    update_cache: true
+
+# - name: Reboot systems
+#   reboot:
+
+- name: Copying Application
+  ansible.builtin.copy:
+    src: /home/ryder/UbuntuApps
+    dest: /home/ryder/
+
+- name: Changing Permissions
+  file:
+    path: /home/ryder/UbuntuApps
+    owner: ryder
+    mode: u=rwx,g=rwx,o=rwx
+    recurse: yes
+
+# use -r in shell script to remove application
+- name: Run shell installing applications
+  command: sh /home/ryder/UbuntuApps/installApps.sh
+
+- name: Upgrade Systems
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: yes

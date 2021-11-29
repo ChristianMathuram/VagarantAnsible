@@ -1,0 +1,5 @@
+---
+- hosts: Thor
+  become: true
+  roles:
+  - basic
